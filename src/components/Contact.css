@@ -1,0 +1,184 @@
+.contact-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.contact-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(60px, 12vw, 200px);
+  color: var(--red);
+  opacity: 0.04;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.contact-sub {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  margin-top: -36px;
+  margin-bottom: 64px;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Two-col grid ───────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  position: relative;
+  z-index: 1;
+  align-items: start;
+}
+
+/* ── Info panel ─────────────────────────────────── */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: border-color 0.3s ease;
+}
+
+.contact-item:last-child { border-bottom: none; }
+.contact-item:hover { border-color: rgba(192, 0, 26, 0.3); }
+
+.contact-icon {
+  font-size: 20px;
+  color: var(--red);
+  min-width: 24px;
+  text-align: center;
+  margin-top: 2px;
+  filter: drop-shadow(0 0 6px var(--red-glow));
+}
+
+.contact-detail { display: flex; flex-direction: column; gap: 4px; }
+
+.contact-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.contact-val {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-style: italic;
+}
+
+a.contact-val:hover { color: #fff; }
+
+/* ── Form ───────────────────────────────────────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.form-field input,
+.form-field textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 16px;
+  padding: 14px 18px;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  border-radius: 0;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(255,255,255,0.25);
+  font-style: italic;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--red);
+  background: rgba(192, 0, 26, 0.05);
+}
+
+/* Reuse hero button styles */
+.contact-btn {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  background-color: transparent;
+  color: #fff;
+  border: 1.5px solid var(--red);
+  border-radius: 0;
+  cursor: pointer;
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: border-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.contact-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--red);
+  transform: translateX(-105%) skewX(-6deg);
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.contact-btn:hover { border-color: #E8001F; }
+.contact-btn:hover::after { transform: translateX(0) skewX(-6deg); }
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .form-row { grid-template-columns: 1fr; }
+}

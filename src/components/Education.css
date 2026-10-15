@@ -1,0 +1,132 @@
+.edu-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.edu-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(80px, 16vw, 280px);
+  color: var(--red);
+  opacity: 0.04;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Card ─────────────────────────────────────── */
+.edu-card {
+  padding: 48px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(255,255,255,0.015);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.4s ease, background 0.4s ease;
+}
+
+.edu-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.edu-card:hover::after { transform: scaleX(1); }
+.edu-card:hover {
+  border-color: rgba(192, 0, 26, 0.4);
+  background: rgba(192, 0, 26, 0.04);
+}
+
+.edu-label {
+  margin-bottom: 0;
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.edu-heading {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-shadow:
+    2px 2px 0px #7A000F,
+    0 0 16px var(--red-glow2);
+  line-height: 1;
+}
+
+.edu-sub {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.edu-location {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loc-icon {
+  color: var(--red);
+  font-size: 11px;
+}
+
+/* ── Highlights ───────────────────────────────── */
+.edu-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.edu-highlights li {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.62);
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.edu-highlights li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-size: 12px;
+  top: 3px;
+}
+
+@media (max-width: 900px) {
+  .edu-grid { grid-template-columns: 1fr; }
+  .edu-card { padding: 32px 24px; }
+}

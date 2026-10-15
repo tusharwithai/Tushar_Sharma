@@ -1,0 +1,71 @@
+.about-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.about-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(100px, 18vw, 260px);
+  color: var(--red);
+  opacity: 0.04;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.about-cols {
+  margin-bottom: 72px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-body {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+}
+
+.about-mission {
+  border-left: 2px solid var(--red);
+  padding-left: 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.mission-text {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(20px, 2.8vw, 32px);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  text-shadow:
+    2px 2px 0px #7A000F,
+    0 0 20px var(--red-glow2);
+  font-style: normal;
+  border: none;
+  margin-bottom: 28px;
+}
+
+.vision-text {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}

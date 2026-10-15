@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap');
+
+.navbar {
+  position: fixed;
+  /* full viewport width — never breaks on zoom */
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 72px;
+  padding: 0 clamp(24px, 4vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(192, 0, 26, 0.2);
+  box-sizing: border-box;
+}
+
+/* ── Logo ─────────────────────────────────── */
+.nav-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(18px, 1.5vw, 24px);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1;
+  pointer-events: all;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-logo span {
+  color: #C9A44A;
+}
+
+/* ── Links ────────────────────────────────── */
+.nav-links {
+  display: flex;
+  gap: clamp(16px, 2.5vw, 36px);
+  list-style: none;
+  flex-wrap: nowrap;
+}
+
+.nav-links li {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(12px, 1vw, 15px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.70);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  pointer-events: all;
+  white-space: nowrap;
+}
+
+/* underline: gold on hover */
+.nav-links li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 1.5px;
+  background: #C9A44A;
+  transition: width 0.35s ease;
+}
+
+.nav-links li:hover {
+  color: #fff;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+/* ── Mobile: hide links below 500px ─────── */
+@media (max-width: 500px) {
+  .nav-links { display: none; }
+}

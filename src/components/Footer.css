@@ -1,0 +1,109 @@
+.footer {
+  background: var(--bg-mid);
+  border-top: 1px solid var(--border);
+  padding: 60px 80px 40px;
+  position: relative;
+}
+
+.footer-top-line {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--red), var(--gold), transparent);
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* ── Left ──────────────────────────────────────── */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-name {
+  font-family: 'Anton', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-shadow:
+    2px 2px 0px #7A000F,
+    0 0 16px var(--red-glow2);
+}
+
+.footer-tagline {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.01em;
+}
+
+/* ── Links ──────────────────────────────────────── */
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-link {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.35s ease;
+}
+
+.footer-link:hover { color: #fff; }
+.footer-link:hover::after { width: 100%; }
+
+.footer-sep {
+  color: var(--red);
+  font-family: 'Bebas Neue', sans-serif;
+  opacity: 0.6;
+}
+
+/* ── Copyright ──────────────────────────────────── */
+.footer-copyright {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.footer-copyright span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .footer { padding: 48px 32px 32px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}

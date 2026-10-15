@@ -1,0 +1,91 @@
+/* ── Global Reset & Base ─────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: 'Crimson Pro', Georgia, serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --red:        #C0001A;
+  --red-glow:   rgba(192, 0, 26, 0.65);
+  --red-glow2:  rgba(192, 0, 26, 0.35);
+  --gold:       #C9A44A;
+  --bg:         #0a0a0a;
+  --bg-mid:     #0f0f0f;
+  --border:     rgba(192, 0, 26, 0.18);
+  --nav-h:      72px;
+}
+
+/* ── Section shared layout ───────────────────────────── */
+.section {
+  padding: clamp(60px, 10vh, 120px) clamp(24px, 6vw, 80px);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ── Section eyebrow label ───────────────────────────── */
+.s-label {
+  display: inline-block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(11px, 0.85vw, 13px);
+  letter-spacing: 0.35em;
+  color: var(--gold);
+  text-transform: uppercase;
+  padding-left: 1.4rem;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.s-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1.5px;
+  background: var(--gold);
+}
+
+/* ── Section heading ─────────────────────────────────── */
+.s-heading {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(44px, 7vw, 96px);
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-shadow:
+    3px 3px 0px #7A000F,
+    0 0 12px var(--red-glow),
+    0 0 30px var(--red-glow2);
+  margin-bottom: clamp(36px, 5vh, 60px);
+}
+
+/* ── Two-column layout ───────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; gap: 40px; }
+}
