@@ -20,7 +20,7 @@ const Hero = () => {
 
     const bottom = new Image()
     const top    = new Image()
-    bottom.src = '/images/twoo.jpg'
+    bottom.src = '/images/twoo.png'
     top.src    = '/images/one.jpg'
 
     const resize = () => {
@@ -96,10 +96,16 @@ const Hero = () => {
       rafId = requestAnimationFrame(draw)
     }
 
-    let loaded = 0
-    const onLoad = () => { if (++loaded === 2) draw() }
-    bottom.onload = onLoad
-    top.onload    = onLoad
+    let started = false
+    const tryDraw = () => {
+      if (!started && bottom.complete && top.complete && bottom.naturalWidth > 0 && top.naturalWidth > 0) {
+        started = true
+        draw()
+      }
+    }
+    bottom.onload = tryDraw
+    top.onload    = tryDraw
+    tryDraw()
 
     return () => {
       hero.removeEventListener('mousemove', onMove)
