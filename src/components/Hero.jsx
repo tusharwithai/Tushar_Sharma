@@ -4,27 +4,27 @@ import './Hero.css'
 import Navbar from './Navbar'
 
 const Hero = () => {
-  const heroRef   = useRef(null)
+  const heroRef = useRef(null)
   const canvasRef = useRef(null)
-  const mouseRef  = useRef({ x: -9999, y: -9999 })
+  const mouseRef = useRef({ x: -9999, y: -9999 })
   const smoothRef = useRef({ x: -9999, y: -9999 })
-  const trailRef  = useRef([])
+  const trailRef = useRef([])
 
   useEffect(() => {
-    const hero   = heroRef.current
+    const hero = heroRef.current
     const canvas = canvasRef.current
-    const ctx    = canvas.getContext('2d')
+    const ctx = canvas.getContext('2d')
 
     const TRAIL_LENGTH = 60
-    const HEAD_RADIUS  = 180
+    const HEAD_RADIUS = 180
 
     const bottom = new Image()
-    const top    = new Image()
+    const top = new Image()
     bottom.src = '/images/twoo.png'
-    top.src    = '/images/one.jpg'
+    top.src = '/images/one.jpg'
 
     const resize = () => {
-      canvas.width  = hero.offsetWidth
+      canvas.width = hero.offsetWidth
       canvas.height = hero.offsetHeight
     }
     resize()
@@ -60,13 +60,13 @@ const Hero = () => {
       ctx.drawImage(bottom, 0, 0, width, height)
 
       const offscreen = document.createElement('canvas')
-      offscreen.width  = width
+      offscreen.width = width
       offscreen.height = height
       const off = offscreen.getContext('2d')
 
       for (let i = 0; i < trail.length; i++) {
-        const t     = 1 - i / trail.length
-        const r     = HEAD_RADIUS * (0.25 + 0.75 * t)
+        const t = 1 - i / trail.length
+        const r = HEAD_RADIUS * (0.25 + 0.75 * t)
         const alpha = Math.pow(t, 1.5)
         off.beginPath()
         off.arc(trail[i].x, trail[i].y, r, 0, Math.PI * 2)
@@ -85,9 +85,9 @@ const Hero = () => {
           head.x, head.y, 0,
           head.x, head.y, HEAD_RADIUS * 1.4
         )
-        glow.addColorStop(0,   'rgba(192, 0, 26, 0.22)')
+        glow.addColorStop(0, 'rgba(192, 0, 26, 0.22)')
         glow.addColorStop(0.5, 'rgba(192, 0, 26, 0.10)')
-        glow.addColorStop(1,   'rgba(0,0,0,0)')
+        glow.addColorStop(1, 'rgba(0,0,0,0)')
         ctx.beginPath()
         ctx.arc(head.x, head.y, HEAD_RADIUS * 1.4, 0, Math.PI * 2)
         ctx.fillStyle = glow
@@ -104,7 +104,7 @@ const Hero = () => {
       }
     }
     bottom.onload = tryDraw
-    top.onload    = tryDraw
+    top.onload = tryDraw
     tryDraw()
 
     return () => {
@@ -120,12 +120,12 @@ const Hero = () => {
   }
 
   const item = {
-    hidden:  { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 70, damping: 12 } },
   }
 
   const navbarVariant = {
-    hidden:  { y: -100, opacity: 0 },
+    hidden: { y: -100, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 80, damping: 14 } },
   }
 
@@ -148,40 +148,31 @@ const Hero = () => {
         <motion.div className="left" variants={item}>
           <motion.span className="st-eyebrow" variants={item}
             style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.25em' }}>
-            — Ghaziabad, India
+            India
           </motion.span>
           <h1 className="st-title"
             style={{ fontFamily: "'Anton', 'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}>
-            THE AI<br />ENGINEER
+            AI/ML ENGINEER
           </h1>
           <motion.p className="st-desc" variants={item}
             style={{ fontFamily: "'Crimson Pro', Georgia, serif", fontStyle: 'italic' }}>
-            He doesn't wait for the future — he builds it. Trained in deep learning and computer vision,
-            Tushar Sharma architects intelligent systems from raw data. Low-latency. High-accuracy.
-            Production-ready. Every model is a decision. Every deployment, a statement.
+            Specializing in Deep Learning, Computer Vision, and RAG pipelines (PyTorch, TensorFlow, LangChain, Llama). Tushar Sharma bridges the gap between research and production—building low-latency ML models integrated into scalable Next.js, PostgreSQL, WebSocket, and Docker infrastructure.
           </motion.p>
-          <motion.button className="st-btn" variants={item}
-            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.2em' }}>
-            ENTER THE PORTFOLIO
-          </motion.button>
         </motion.div>
 
         {/* RIGHT */}
         <motion.div className="right" variants={item}>
           <motion.span className="st-eyebrow right-eyebrow" variants={item}
             style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.25em' }}>
-            — SRM IST Ghaziabad
+            SRM IST | B.TECH CSE '27
           </motion.span>
           <h1 className="st-title"
             style={{ fontFamily: "'Anton', 'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}>
-            THE MIND<br />BEHIND THE MODEL
+            THE MIND BEHIND THE MODEL
           </h1>
           <motion.p className="st-text" variants={item}
             style={{ fontFamily: "'Crimson Pro', Georgia, serif", fontStyle: 'italic' }}>
-            B.Tech Computer Science student by day. AI engineer by conviction. From classifying
-            38 plant diseases at 97.45% accuracy to building real-time ASL translation inside
-            live video calls — the code is always running.
+            B.Tech Computer Science student at SRM IST. Engineered a real-time 3D hand-gesture ASL translation pipeline at sub-50ms latency. Fine-tuned MobileNetV2 on 70K+ images achieving 97.45% validation accuracy. Built to execute under pressure.
           </motion.p>
         </motion.div>
       </motion.div>

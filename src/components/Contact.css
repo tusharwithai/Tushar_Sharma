@@ -9,7 +9,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Anton', sans-serif;
-  font-size: clamp(60px, 12vw, 200px);
+  font-size: clamp(3.75rem, 12vw, 12.5rem);
   color: var(--red);
   opacity: 0.04;
   letter-spacing: 0.05em;
@@ -22,12 +22,12 @@
 
 .contact-sub {
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-style: italic;
   font-weight: 300;
   color: rgba(255,255,255,0.6);
-  margin-top: -36px;
-  margin-bottom: 64px;
+  margin-top: -2.25rem;
+  margin-bottom: 4rem;
   letter-spacing: 0.01em;
   position: relative;
   z-index: 1;
@@ -37,7 +37,7 @@
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
-  gap: 80px;
+  gap: 5rem;
   position: relative;
   z-index: 1;
   align-items: start;
@@ -47,14 +47,14 @@
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 2rem;
 }
 
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  padding-bottom: 28px;
+  gap: 1.25rem;
+  padding-bottom: 1.75rem;
   border-bottom: 1px solid rgba(255,255,255,0.05);
   transition: border-color 0.3s ease;
 }
@@ -63,9 +63,9 @@
 .contact-item:hover { border-color: rgba(192, 0, 26, 0.3); }
 
 .contact-icon {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--red);
-  min-width: 24px;
+  min-width: 1.5rem;
   text-align: center;
   margin-top: 2px;
   filter: drop-shadow(0 0 6px var(--red-glow));
@@ -75,7 +75,7 @@
 
 .contact-label {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 11px;
+  font-size: 0.7rem;
   letter-spacing: 0.3em;
   color: var(--gold);
   text-transform: uppercase;
@@ -83,7 +83,7 @@
 
 .contact-val {
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 17px;
+  font-size: 1.075rem;
   color: rgba(255,255,255,0.78);
   text-decoration: none;
   transition: color 0.3s ease;
@@ -96,24 +96,24 @@ a.contact-val:hover { color: #fff; }
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .form-field label {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.28em;
   color: var(--gold);
   text-transform: uppercase;
@@ -125,8 +125,8 @@ a.contact-val:hover { color: #fff; }
   border: 1px solid rgba(255,255,255,0.1);
   color: #fff;
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 16px;
-  padding: 14px 18px;
+  font-size: 1rem;
+  padding: 0.875rem 1.125rem;
   outline: none;
   resize: vertical;
   transition: border-color 0.3s ease, background 0.3s ease;
@@ -148,10 +148,10 @@ a.contact-val:hover { color: #fff; }
 /* Reuse hero button styles */
 .contact-btn {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 17px;
+  font-size: 1.075rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  padding: 18px 40px;
+  padding: 1.125rem 2.5rem;
   background-color: transparent;
   color: #fff;
   border: 1.5px solid var(--red);
@@ -179,6 +179,6 @@ a.contact-val:hover { color: #fff; }
 .contact-btn:hover::after { transform: translateX(0) skewX(-6deg); }
 
 @media (max-width: 900px) {
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .form-row { grid-template-columns: 1fr; }
 }

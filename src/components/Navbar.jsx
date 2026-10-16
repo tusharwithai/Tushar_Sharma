@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="nav-logo">TS<span>.</span></div>
+      <div className="nav-logo">Tushar Sharma<span></span></div>
       <ul className="nav-links">
         <li onClick={() => scrollTo('projects')}>Projects</li>
         <li onClick={() => scrollTo('skills')}>Skills</li>

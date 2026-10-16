@@ -5,8 +5,26 @@
   padding: 0;
 }
 
+/* ── Root font-size scaling ──────────────────────────
+   Sets 1rem = 12px on large desktop (equivalent to Chrome 75% zoom).
+   Scales up progressively on smaller screens for readability.
+   All rem-based values throughout the site respond to this.
+───────────────────────────────────────────────────── */
 html {
+  font-size: 75%;      /* desktop default: 1rem = 12px */
   scroll-behavior: smooth;
+}
+
+@media (max-width: 1280px) {
+  html { font-size: 81.25%; } /* 1rem ≈ 13px */
+}
+
+@media (max-width: 900px) {
+  html { font-size: 87.5%; }  /* 1rem = 14px (tablet) */
+}
+
+@media (max-width: 600px) {
+  html { font-size: 100%; }   /* 1rem = 16px (mobile, keep readable) */
 }
 
 body {
@@ -24,18 +42,18 @@ body {
   --bg:         #0a0a0a;
   --bg-mid:     #0f0f0f;
   --border:     rgba(192, 0, 26, 0.18);
-  --nav-h:      72px;
+  --nav-h:      4.5rem; /* 72px at default 16px, ~54px at 75% scale */
 }
 
 /* ── Section shared layout ───────────────────────────── */
 .section {
-  padding: clamp(60px, 10vh, 120px) clamp(24px, 6vw, 80px);
+  padding: clamp(3.75rem, 10vh, 7.5rem) clamp(1.5rem, 6vw, 5rem);
   position: relative;
   overflow: hidden;
 }
 
 .section-inner {
-  max-width: 1280px;
+  max-width: 90rem; /* 1280px at default; ~960px at 75% scale */
   margin: 0 auto;
 }
 
@@ -43,13 +61,13 @@ body {
 .s-label {
   display: inline-block;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(11px, 0.85vw, 13px);
+  font-size: clamp(0.7rem, 0.85vw, 0.85rem);
   letter-spacing: 0.35em;
   color: var(--gold);
   text-transform: uppercase;
   padding-left: 1.4rem;
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .s-label::before {
@@ -66,7 +84,7 @@ body {
 /* ── Section heading ─────────────────────────────────── */
 .s-heading {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(44px, 7vw, 96px);
+  font-size: clamp(2.75rem, 7vw, 6rem);
   color: #fff;
   text-transform: uppercase;
   line-height: 1;
@@ -75,17 +93,17 @@ body {
     3px 3px 0px #7A000F,
     0 0 12px var(--red-glow),
     0 0 30px var(--red-glow2);
-  margin-bottom: clamp(36px, 5vh, 60px);
+  margin-bottom: clamp(2.25rem, 5vh, 3.75rem);
 }
 
 /* ── Two-column layout ───────────────────────────────── */
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(32px, 6vw, 80px);
+  gap: clamp(2rem, 6vw, 5rem);
   align-items: start;
 }
 
 @media (max-width: 900px) {
-  .two-col { grid-template-columns: 1fr; gap: 40px; }
+  .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
 }

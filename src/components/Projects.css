@@ -9,7 +9,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Anton', sans-serif;
-  font-size: clamp(100px, 18vw, 260px);
+  font-size: clamp(6.25rem, 18vw, 16.25rem);
   color: var(--red);
   opacity: 0.04;
   letter-spacing: 0.05em;
@@ -23,7 +23,7 @@
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 5rem;
   position: relative;
   z-index: 1;
 }
@@ -31,9 +31,9 @@
 /* ── Project Card ─────────────────────────────────── */
 .project-card {
   display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 48px;
-  padding: 48px;
+  grid-template-columns: 5rem 1fr;
+  gap: 3rem;
+  padding: 3rem;
   border: 1px solid var(--border);
   position: relative;
   background: rgba(255,255,255,0.015);
@@ -60,7 +60,7 @@
 /* ── Project number ─────────────────────────────── */
 .project-number {
   font-family: 'Anton', sans-serif;
-  font-size: 72px;
+  font-size: 4.5rem;
   color: var(--red);
   opacity: 0.18;
   line-height: 1;
@@ -72,18 +72,18 @@
 .project-card:hover .project-number { opacity: 0.55; }
 
 /* ── Project body ───────────────────────────────── */
-.project-body { display: flex; flex-direction: column; gap: 20px; }
+.project-body { display: flex; flex-direction: column; gap: 1.25rem; }
 
 .project-label {
   margin-bottom: 0;
   color: var(--gold);
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.3em;
 }
 
 .project-heading {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(36px, 5vw, 60px);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -95,7 +95,7 @@
 
 .project-sub {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   letter-spacing: 0.22em;
   color: var(--gold);
   text-transform: uppercase;
@@ -103,7 +103,7 @@
 
 .project-desc {
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: italic;
   font-weight: 300;
   line-height: 1.8;
@@ -113,11 +113,11 @@
 
 .project-stat {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 15px;
+  font-size: 0.95rem;
   letter-spacing: 0.28em;
   color: var(--red);
   border-left: 2px solid var(--red);
-  padding-left: 18px;
+  padding-left: 1.125rem;
 }
 
 /* ── Outcomes ───────────────────────────────────── */
@@ -125,14 +125,14 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .project-outcomes li {
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: rgba(255,255,255,0.62);
-  padding-left: 22px;
+  padding-left: 1.375rem;
   position: relative;
   line-height: 1.6;
 }
@@ -142,7 +142,7 @@
   position: absolute;
   left: 0;
   color: var(--red);
-  font-size: 12px;
+  font-size: 0.75rem;
   top: 3px;
 }
 
@@ -156,11 +156,11 @@
 
 .stack-chip {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 13px;
+  font-size: 0.85rem;
   letter-spacing: 0.18em;
   color: rgba(255,255,255,0.55);
   border: 1px solid rgba(255,255,255,0.1);
-  padding: 5px 14px;
+  padding: 0.3rem 0.875rem;
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
@@ -170,6 +170,6 @@
 }
 
 @media (max-width: 700px) {
-  .project-card { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; }
-  .project-number { font-size: 48px; }
+  .project-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
+  .project-number { font-size: 3rem; }
 }
